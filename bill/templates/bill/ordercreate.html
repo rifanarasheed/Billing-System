@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Add Customer Information</h1>
+<form action="" method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="CREATE BILL">
+</form>
+<div>
+    <a href="{% url 'OrderBillnoSearch' %}">Search Using Customer Bill Number</a>
+</div>
+<div>
+    <a href="{% url 'orderdateSearch' %}">Search Using Customer Bill Date</a>
+</div>
+<div>
+    <a href="{% url 'ordernameSearch' %}">Search Using Customer Name</a>
+</div>
+</body>
+</html>
