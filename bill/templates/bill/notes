@@ -1,0 +1,24 @@
+to filter according to any fields, we install application known as django filter
+pip install django-filter
+then in settings.py, we need to register the application - 'django_filters'
+then create a file known as filter.py file in bill app and import model which we need to filter the filed
+and import the class to views.py which we have created in filter.py
+then create class based or function based view and map in urls.py
+when rendering the form as passed context name -> {{filter.for.as_p}}
+
+
+FOR AUTHENITICATION -
+if we want only superuser to have access to create bill, for that we need to create decorator.
+in function based view we can just create decorator and apply above the function where we need them
+but in class based view, we need to create a separate file for decorators.py
+in that create a decorator and import them in views.py
+as in function based in view, we directly gave decorator name by @, here we import -> from django.utils.decorators import method_decorator
+and above the class where we need to apply decorator give it as @method_decorator(admin_only,name='dispatch')
+
+normally,when we want to authenticate the user, we import them from inbuilt module authenticate,
+But if we want to authenticate using email and password when logging in,so, we create a new file known as authenticate.py to make our own authentication and import that file instead of inbuilt
+then in setting.py add in last
+AUTHENTICATION_BACKENDs = "bill.authentication.EmailAuthBackend"
+
+
+

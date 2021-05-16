@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="get">
+    {{filter.form.as_p}}
+    <input type="submit" value="Search">
+</form>
+{% for order in filter.qs %}
+<div>
+    {{order.bill_number}}
+    {{order.customer_name}}
+    {{order.bill_date}}
+    {{order.bill_total}}
+</div>
+{% endfor %}
+</body>
+</html>

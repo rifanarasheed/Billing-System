@@ -11,8 +11,9 @@
     {{form.as_p}}
     <input type="submit" value="search">
 </form>
-
+{% if customer_name %}
 <h2> Name : {{billnumber}}</h2>
+<h2> Name : {{customer_name}}</h2>
 <h2> Phone Number : {{phone}}</h2>
 <h2> Date : {{date}}</h2>
 <table class="table table-dark table-striped">
@@ -37,3 +38,6 @@
         </td>
     </tr>
 </table>
+{% endif %}
+</body>
+</html>

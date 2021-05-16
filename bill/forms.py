@@ -1,7 +1,8 @@
 from django.forms import ModelForm
 from django import forms
 from bill.models import Order,Purchase
-
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
 class OrderCreateForm(ModelForm):
     class Meta:
         model = Order
@@ -45,3 +46,17 @@ class BillNameSearchForm(forms.Form):
 
 class BillDateSearchForm(forms.Form):
     bill_date = forms.DateField()
+
+class SearchbillForm(forms.Form):
+    bill_number = forms.CharField(max_length=30)
+    customer_name = forms.CharField(max_length=40)
+    bill_date = forms.DateField()
+
+class UserRegister(UserCreationForm):
+    class Meta:
+        model = User
+        fields = ["first_name","username","email","password1","password2"]
+
+class UserLogin(forms.Form):
+    email = forms.CharField()
+    password = forms.CharField(widget=forms.PasswordInput)
